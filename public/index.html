@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./../src/style.css">
+        <title>ROT13</title>
+    </head>
+    <body>
+        <header class="blockHeader">
+            <div class="contentHead">
+                <div class="logo">
+                    <a href="#"><img src="password-alt.png" alt=""></a>
+                </div>
+                <p>ROT13</p>
+            </div>
+        </header>
+        <main>
+            <h1>Зашифруем любой ваш текст</h1>
+            <div class="mainContent">
+                <section class="leftContent">
+                    <h2>Введите текст:</h2>
+                    <hr>
+                    <textarea name="refText" id="refText" class="refText" maxlength="500" placeholder="Напишите что-нибуть..."></textarea>
+                    <hr>
+                    <div class="btn">
+                        <button id="shifrBtn">Зашифровать</button>
+                        <button id="deShifrBtn">Дешифровать</button>
+                    </div>
+                </section>
+                <div class="perehod" id="perehod">
+                    <hr class="vverh">
+                    <img src="./image/icons8-forward-100.png" alt="">
+                </div>
+                <section class="leftContent right" id="right">
+                    <h2>Вот что получилось:</h2>
+                    <hr>
+                    <p id="shifrDeshifrText">Здесь будет результат шифрования...</p>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <h3>Паршутин Евгений Эдуардович</h3>
+            <hr class="foot">
+            <p>ИСП - 31</p>
+        </footer>
+        <script src="./../src/app.js"></script> 
+    </body>
+</html>
