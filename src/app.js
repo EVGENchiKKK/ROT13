@@ -65,4 +65,8 @@ document.getElementById('shifrBtn').addEventListener('click', () => {shifrovanie
 
 
 });
-document.getElementById('deShifrBtn').addEventListener('click', () => shifrovanie(-13));
+document.getElementById('deShifrBtn').addEventListener('click', () => {shifrovanie(-13)
+    const rightPan = document.getElementById('right');
+    rightPan.style.backgroundColor = 'rgba(255, 0, 0, 0.3)';
+    perehod.style.cssText = perehodStyle;
+});

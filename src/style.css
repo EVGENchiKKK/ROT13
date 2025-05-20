@@ -130,7 +130,7 @@ button:active {
 
 button#deshifrBtn:active {
     transition: ease-in-out 0.1s;
-    background-color: rgba(0, 255, 26, 0.5);
+    background-color: rgba(255, 0, 0, 0.5);
 }
 
 button#deShifrBtn {
