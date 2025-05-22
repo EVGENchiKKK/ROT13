@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'Comfortaa';
-  src: url('./../public/components/fonts/Comfortaa.ttf');
+  src: url('/components/fonts/Comfortaa.ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -141,16 +141,10 @@ button#deShifrBtn {
     height: 230px;
     width: 90.5%;
     padding: 20px;
-    /* background-color: rgba(0, 255, 26, 0.5); */
-    /* border: 1px solid black; */
     border-radius: 12px;
 }
 
 .perehod {
-    /* width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; */
     display: none;
 }
 

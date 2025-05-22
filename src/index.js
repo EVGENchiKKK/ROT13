@@ -1,21 +1,51 @@
-// const http = require('http');
-// const port = 8080;
+const http = require('http');
+const fs = require('fs');
 
-// const server = http.createServer((req, res) => {
-//     res.end("Hello world!")
-// })
+const PORT = 3000;
+const HOST = 'localhost';
 
-// server.listen(port, () => {
-//     console.log('Сервер запущен по адрессу: http://localhost:%s', port)
-// })
+const server = http.createServer(function(request, response) {
+    if (request.url === '/') {
+        response.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        fs.createReadStream('./public/index.html').pipe(response);
+        return;
+    };
 
-const express = require('express');
-const app = express();
+    if (request.url === '/style.css') {
+        response.writeHead(200, {'Content-Type': 'text/css'});
+        fs.createReadStream('src/style.css').pipe(response);
+        return;
+    };
 
-app.get('/', (req, res) => {
-    res.send("Hello world!");
+    if (request.url === '/app.js') {
+        response.writeHead(200, {'Content-Type': 'text/javascript'});
+        fs.createReadStream('src/app.js').pipe(response);
+        return;
+    };
+
+    if (request.url === '/password-alt.png') {
+        response.writeHead(200, {'content-type': 'image/png'});
+        fs.createReadStream('public/password-alt.png').pipe(response);
+        return;
+    }
+
+    if (request.url === '/image/icons8-forward-100.png') {
+        response.writeHead(200, {'content-type': 'image/png'});
+        fs.createReadStream('public/image/icons8-forward-100.png').pipe(response);
+        return;
+    }
+
+    if (request.url === '/components/fonts/Comfortaa.ttf') {
+        response.writeHead(200, {'content-type': 'font/ttf'});
+        fs.createReadStream('public/components/fonts/Comfortaa.ttf').pipe(response);
+        return;
+    }
+
+    response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+    response.end('<h1>404 Not Found</h1><p>Страница не существует</p>');
+
 });
 
-app.listen(8080, () => {
-    console.log('Сервер запущен по адресу: http://localhost:8080');
+server.listen(PORT, HOST, () => {
+    console.log(`Сервер запущен по адрессу: http://${HOST}:${PORT}/`);
 });
