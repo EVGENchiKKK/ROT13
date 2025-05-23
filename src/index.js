@@ -42,7 +42,7 @@ const server = http.createServer(function(request, response) {
     }
 
     response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-    response.end('<h1>404 Not Found</h1><p>Страница не существует</p>');
+    fs.createReadStream('public/errorPage.html').pipe(response);
 
 });
 
