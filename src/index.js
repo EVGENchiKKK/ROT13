@@ -17,11 +17,17 @@ export function main(request, response) {
         return;
     };
 
-    // if (request.url === '/app.js') {
-    //     response.writeHead(200, {'Content-Type': 'text/javascript'});
-    //     fs.createReadStream('src/app.js').pipe(response);
-    //     return;
-    // };
+    if (request.url === '/loadetText.js') {
+        response.writeHead(200, {'content-type': 'text/javascript'});
+        fs.createReadStream('src/loadetText.js').pipe(response);
+        return;
+    }
+
+    if (request.url === '/app.js') {
+        response.writeHead(200, {'Content-Type': 'text/javascript'});
+        fs.createReadStream('src/app.js').pipe(response);
+        return;
+    };
 
     if (request.url === '/password-alt.png') {
         response.writeHead(200, {'content-type': 'image/png'});
@@ -59,12 +65,12 @@ export function main(request, response) {
         return;
     }
 
-    if (request.url.startsWith('/app.js')) {
-        const js = fs.readFileSync('src/app.js');
-        response.writeHead(200, { 'Content-Type': 'text/javascript' });
-        response.end(js);
-        return;
-    }
+    // if (request.url.startsWith('/app.js')) {
+    //     const js = fs.readFileSync('src/app.js');
+    //     response.writeHead(200, { 'Content-Type': 'text/javascript' });
+    //     response.end(js);
+    //     return;
+    // }
 
     response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
     fs.createReadStream('public/errorPage.html').pipe(response);

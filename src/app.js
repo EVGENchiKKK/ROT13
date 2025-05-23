@@ -1,17 +1,5 @@
 import alphavitRus from './const/rusAlphavit.js';
 import alphavitEng from './const/engAlphavit.js';
-import textConstants from './const/textContent.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-    const html = document.body.innerHTML;
-
-    const filledHtml = html.replace(/{{\s*([^{}]+)\s*}}/g, (match, key) => {
-        return textConstants[key.trim()] || match;
-    });
-
-    document.body.innerHTML = filledHtml;
-    document.head.title = filledHtml;
-});
 
 function shifr (text, alphavit, sdvig) {
     let res = [];

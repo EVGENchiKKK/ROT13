@@ -4,15 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/style.css">
-        <title>Document</title>
+        <title>{{titleErr}}</title>
     </head>
     <body>
         <header></header>
         <main class="err">
-            <h1>Not Found 404</h1>
-            <p>Страница не найдена, пожалуйста, вернитесь на главную</p>
-            <a href="/" class="btnBack">Назад</a>
+            <h1>{{messageErr}}</h1>
+            <p>{{textErr}}</p>
+            <a href="/" class="btnBack">{{btnBack}}</a>
         </main>
        <footer class="errFoot"></footer>
+       <script type="module" src="/loadetText.js"></script>
     </body>
 </html>
