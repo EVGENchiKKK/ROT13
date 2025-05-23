@@ -1,16 +1,17 @@
-const alphavitRus = [
-    'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М',
-    'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я',
-    'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м',
-    'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'
-];
+import alphavitRus from './const/rusAlphavit.js';
+import alphavitEng from './const/engAlphavit.js';
+import textConstants from './const/textContent.js';
 
-const alphavitEng = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const html = document.body.innerHTML;
+
+    const filledHtml = html.replace(/{{\s*([^{}]+)\s*}}/g, (match, key) => {
+        return textConstants[key.trim()] || match;
+    });
+
+    document.body.innerHTML = filledHtml;
+    document.head.title = filledHtml;
+});
 
 function shifr (text, alphavit, sdvig) {
     let res = [];
@@ -47,9 +48,7 @@ function shifrovanie(sdvig) {
     shifrText = shifr(shifrText, alphavitEng, sdvig);
 
     document.getElementById('shifrDeshifrText').textContent = shifrText;
-
-    
-};
+}
 
 document.getElementById('shifrBtn').addEventListener('click', () => {shifrovanie(13)
     const rightPan = document.getElementById('right');
@@ -62,8 +61,6 @@ document.getElementById('shifrBtn').addEventListener('click', () => {shifrovanie
     `;
     rightPan.style.backgroundColor = 'rgba(0, 255, 9, 0.3)';
     perehod.style.cssText = perehodStyle;
-
-
 });
 document.getElementById('deShifrBtn').addEventListener('click', () => {shifrovanie(-13)
     const rightPan = document.getElementById('right');

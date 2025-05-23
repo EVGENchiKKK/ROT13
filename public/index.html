@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/style.css">
-        <title>ROT13</title>
+        <title>{{title}}</title>
     </head>
     <body>
         <header class="blockHeader">
@@ -12,20 +12,20 @@
                 <div class="logo">
                     <a href="#"><img src="password-alt.png" alt=""></a>
                 </div>
-                <p>ROT13</p>
+                <p>{{headerText}}</p>
             </div>
         </header>
         <main>
-            <h1>Зашифруем любой ваш текст</h1>
+            <h1>{{mainTitle}}</h1>
             <div class="mainContent">
                 <section class="leftContent">
-                    <h2>Введите текст:</h2>
+                    <h2>{{inputLabel}}</h2>
                     <hr>
-                    <textarea name="refText" id="refText" class="refText" maxlength="500" placeholder="Напишите что-нибуть..."></textarea>
+                    <textarea name="refText" id="refText" class="refText" maxlength="500" placeholder="{{placeholder}}"></textarea>
                     <hr>
                     <div class="btn">
-                        <button id="shifrBtn">Зашифровать</button>
-                        <button id="deShifrBtn">Дешифровать</button>
+                        <button id="shifrBtn">{{encryptBtn}}</button>
+                        <button id="deShifrBtn">{{decryptBtn}}</button>
                     </div>
                 </section>
                 <div class="perehod" id="perehod">
@@ -33,17 +33,17 @@
                     <img src="./image/icons8-forward-100.png" alt="">
                 </div>
                 <section class="leftContent right" id="right">
-                    <h2>Вот что получилось:</h2>
+                    <h2>{{resultLabel}}</h2>
                     <hr>
-                    <p id="shifrDeshifrText">Здесь будет результат шифрования...</p>
+                    <p id="shifrDeshifrText">{{defaultResult}}</p>
                 </section>
             </div>
         </main>
         <footer>
-            <h3>Паршутин Евгений Эдуардович</h3>
+            <h3>{{footerName}}</h3>
             <hr class="foot">
-            <p>ИСП - 31</p>
+            <p>{{footerGroup}}</p>
         </footer>
-        <script src="/app.js"></script> 
+        <script type="module" src="/app.js"></script>
     </body>
 </html>
